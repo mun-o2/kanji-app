@@ -1,9 +1,10 @@
 .top-page {
   min-height: 100vh;
-  background: #f5f7fb;
+  background: #f9fbff;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateY(-20px);
   padding: 24px 20px;
 }
 
