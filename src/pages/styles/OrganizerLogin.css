@@ -1,0 +1,80 @@
+.organizer-login-page {
+    min-height: 100vh;
+    background: #f9fbff;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.organizeLogin-label {
+    margin-top: 60px;
+    font-size: 26px;
+    font-weight: 800;
+    padding: 10px 0;
+    align-items: center;
+
+}
+
+.organizeLogin-inputcard {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px 24px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.organizeLogin-input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #e6eefc;
+    margin-top: 6px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* --- Buttons --- */
+.organizeLogin-button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 70%;
+}
+
+.register-button {
+    border: 0px;
+    background: #fff;
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 70%;
+}
+
+/* --- Divider --- */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.divider span {
+  padding: 0 12px;
+}
+

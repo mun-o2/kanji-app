@@ -16,20 +16,46 @@
 }
 
 /* --- Reset / base --- */
-* { box-sizing: border-box; }
-html, body, #root { height: 100%; }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Zen Kaku Gothic New", sans-serif;
   background: var(--bg);
   color: #0f172a;
-  -webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* --- Layout wrappers --- */
-.app-root, .app { min-height: 100vh; display: flex; flex-direction: column; }
-.app { width: 100%; max-width: 430px; margin: 0 auto; padding: 20px; background: transparent; }
-.container { padding: 20px; max-width: var(--max-width); margin: 18px auto; width: 100%; }
+.app-root,
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 20px;
+  background: transparent;
+}
+
+.container {
+  padding: 20px;
+  max-width: var(--max-width);
+  margin: 18px auto;
+  width: 100%;
+}
 
 /* --- Navigation --- */
 .nav {
@@ -37,31 +63,81 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 16px 20px;
-  border-bottom: 1px solid rgba(238,242,255,0.8);
+  border-bottom: 1px solid rgba(238, 242, 255, 0.8);
   background: transparent;
 }
-.nav .brand { font-weight: 700; color: var(--accent-strong); }
-.nav nav button { background: transparent; border: none; color: var(--accent); margin-left: 12px; padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+
+.nav .brand {
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.nav nav button {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  margin-left: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
 /* --- Card list / cards --- */
-.card-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
 .card {
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 16px;
   margin-bottom: 16px;
   box-shadow: var(--shadow-sm);
-  border: 1px solid rgba(15,23,42,0.04);
+  border: 1px solid rgba(15, 23, 42, 0.04);
 }
-.card + .card { margin-top: 12px; }
-.card h3 { margin: 0 0 6px; }
-.card p { margin: 0 0 8px; color: var(--muted); }
-.card-actions { display: flex; gap: 8px; margin-top: 12px; }
+
+.card+.card {
+  margin-top: 12px;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+}
+
+.card p {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
 
 /* --- Form controls --- */
-label { display: block; font-size: 14px; margin-top: 8px; }
-input, select, textarea { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #e6eefc; margin-top: 6px; font-size: 15px; }
-ul { padding-left: 16px; }
+label {
+  display: block;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e6eefc;
+  margin-top: 6px;
+  font-size: 15px;
+}
+
+ul {
+  padding-left: 16px;
+}
 
 /* --- Buttons --- */
 button {
@@ -70,15 +146,38 @@ button {
   cursor: pointer;
   font-weight: 600;
 }
-button[disabled] { opacity: 0.5; cursor: not-allowed; }
-.secondary { background: white; color: var(--accent); border: 1px solid var(--accent); }
-.text-button { background: transparent; color: var(--accent); box-shadow: none; }
+
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secondary {
+  background: white;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.text-button {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: none;
+}
 
 /* --- Utilities / footer --- */
-.footer { padding: 20px; text-align: center; color: var(--muted); }
+.footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+}
 
 /* small responsive tweaks */
 @media (max-width: 520px) {
-  .container { padding: 12px; }
-  .card { padding: 14px; }
+  .container {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 14px;
+  }
 }

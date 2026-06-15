@@ -17,7 +17,7 @@ function Top() {
           出欠管理・自動席割・当日の連絡まで、幹事の負担をまとめて減らすアプリです。
         </p>
 
-        <div className = "top-button">
+        <div className="top-button">
           <button onClick={() => navigate("/login")}>ルームを作成する</button>
           <button className="join-button" onClick={() => navigate("/rsvp")}>ルームに参加する</button>
         </div>
