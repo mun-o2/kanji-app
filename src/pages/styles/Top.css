@@ -1,0 +1,67 @@
+.top-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 20px;
+}
+
+.phone-card {
+  width: 100%;
+  max-width: 330px;
+  background: #fff;
+  border: 1px solid #d8dde8;
+  border-radius: 18px;
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.top-card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 24px;
+  color: #111827;
+}
+
+.app-label {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.top-copy {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.top-button {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.top-button button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 20px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+
+.top-button .join-button {
+  background: transparent;
+  color: #3b82f6;
+  border: 1px solid #3b82f6;
+}

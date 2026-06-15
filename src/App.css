@@ -1,81 +1,84 @@
-:root{
-  --bg: #ffffff;
-  --accent: #0b6efd; /* blue */
+/* -----------------------------
+   App styles (clean, organized)
+   ----------------------------- */
+
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --accent: #4f7cff;
+  --accent-strong: #0b6efd;
   --muted: #6b7280;
-  --card-bg: #ffffff;
-  --shadow: 0 8px 20px rgba(11,110,253,0.08);
-  --radius: 12px;
+  --shadow-lg: 0 8px 20px rgba(11, 110, 253, 0.08);
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --max-width: 980px;
 }
 
-*{box-sizing:border-box}
-html,body,#root{height:100%}
-body{font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#0f172a; margin:0}
-
-.app-root{min-height:100vh; display:flex; flex-direction:column}
-.nav{display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid #eef2ff}
-.nav .brand{font-weight:700; color:var(--accent)}
-.nav nav button{background:transparent;border:none;color:var(--accent);margin-left:12px;padding:8px 10px;border-radius:8px;cursor:pointer}
-.container{padding:20px; max-width:980px; margin:18px auto}
-.card{background:var(--card-bg); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); border:1px solid rgba(15,23,42,0.04)}
-.card + .card{margin-top:12px}
-.card-list{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px}
-.card h3{margin:0 0 6px}
-.card p{margin:0 0 8px;color:var(--muted)}
-.card-actions{display:flex; gap:8px; margin-top:12px}
-button{background:var(--accent); color:white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer}
-button[disabled]{opacity:0.5; cursor:not-allowed}
-input,select{width:100%; padding:8px 10px; border-radius:8px; border:1px solid #e6eefc; margin-top:6px}
-label{display:block; font-size:14px; margin-top:8px}
-ul{padding-left:16px}
-
-.footer{padding:20px;text-align:center;color:var(--muted)}
-
-* {
-  box-sizing: border-box;
-}
-
+/* --- Reset / base --- */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
 body {
   margin: 0;
-  background: #f5f7fb;
-  font-family: system-ui, sans-serif;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  background: var(--bg);
+  color: #0f172a;
+  -webkit-font-smoothing:antialiased;
 }
 
-.app {
-  width: 100%;
-  max-width: 430px;
-  min-height: 100vh;
-  margin: 0 auto;
-  background: #ffffff;
-  padding: 20px;
-}
+/* --- Layout wrappers --- */
+.app-root, .app { min-height: 100vh; display: flex; flex-direction: column; }
+.app { width: 100%; max-width: 430px; margin: 0 auto; padding: 20px; background: transparent; }
+.container { padding: 20px; max-width: var(--max-width); margin: 18px auto; width: 100%; }
 
+/* --- Navigation --- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(238,242,255,0.8);
+  background: transparent;
+}
+.nav .brand { font-weight: 700; color: var(--accent-strong); }
+.nav nav button { background: transparent; border: none; color: var(--accent); margin-left: 12px; padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+
+/* --- Card list / cards --- */
+.card-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
 .card {
-  background: #ffffff;
-  border-radius: 16px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
   padding: 16px;
   margin-bottom: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(15,23,42,0.04);
 }
+.card + .card { margin-top: 12px; }
+.card h3 { margin: 0 0 6px; }
+.card p { margin: 0 0 8px; color: var(--muted); }
+.card-actions { display: flex; gap: 8px; margin-top: 12px; }
 
+/* --- Form controls --- */
+label { display: block; font-size: 14px; margin-top: 8px; }
+input, select, textarea { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #e6eefc; margin-top: 6px; font-size: 15px; }
+ul { padding-left: 16px; }
+
+/* --- Buttons --- */
 button {
-  width: 100%;
-  padding: 14px 16px;
-  border: none;
+  padding: 10px 14px;
   border-radius: 12px;
-  background: #4f7cff;
-  color: white;
-  font-size: 16px;
+  cursor: pointer;
   font-weight: 600;
 }
+button[disabled] { opacity: 0.5; cursor: not-allowed; }
+.secondary { background: white; color: var(--accent); border: 1px solid var(--accent); }
+.text-button { background: transparent; color: var(--accent); box-shadow: none; }
 
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 16px;
+/* --- Utilities / footer --- */
+.footer { padding: 20px; text-align: center; color: var(--muted); }
+
+/* small responsive tweaks */
+@media (max-width: 520px) {
+  .container { padding: 12px; }
+  .card { padding: 14px; }
 }

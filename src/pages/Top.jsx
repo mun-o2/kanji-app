@@ -1,33 +1,27 @@
 import { useNavigate } from "react-router-dom";
+import "./styles/Top.css";
 
 function Top() {
   const navigate = useNavigate();
 
   return (
     <main className="top-page">
-      <section className="hero-card">
-        <p className="app-label">KanjiApp</p>
+      <section className="phone-card top-card">
+        <h1 className="app-label">eventer</h1>
 
-        <h1>
-          サークルの飲み会を
-          <br />
-          もっと簡単に
-        </h1>
+        <p className="top-copy">
+          イベントの幹事をもっと簡単に。
+        </p>
 
         <p className="hero-text">
           出欠管理・自動席割・当日の連絡まで、幹事の負担をまとめて減らすアプリです。
         </p>
 
-        <div className="top-actions">
-          <button onClick={() => navigate("/login")}>幹事ログイン</button>
-          <button className="secondary" onClick={() => navigate("/register")}>
-            新規登録
-          </button>
+        <div className = "top-button">
+          <button onClick={() => navigate("/login")}>ルームを作成する</button>
+          <button className="join-button" onClick={() => navigate("/rsvp")}>ルームに参加する</button>
         </div>
 
-        <button className="text-button" onClick={() => navigate("/rsvp")}>
-          参加者はこちら
-        </button>
       </section>
     </main>
   );

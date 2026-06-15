@@ -28,7 +28,7 @@ export default function App() {
     <AppContext.Provider value={{ events, setEvents }}>
       <div className="app-root">
         <BrowserRouter>
-          <Nav />
+
           <Routes>
             <Route path="/" element={<Top />} />
             <Route path="/login" element={<OrganizerLogin />} />
