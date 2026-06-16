@@ -1,0 +1,65 @@
+.rsvp-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.rsvp-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.rsvp-label {
+  color: #2563eb;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.rsvp-card h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #111827;
+}
+
+.rsvp-description {
+  color: #6b7280;
+  margin: 10px 0 24px;
+}
+
+.rsvp-form {
+  display: grid;
+  gap: 16px;
+}
+
+.rsvp-form label {
+  display: grid;
+  gap: 8px;
+  color: #374151;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.rsvp-form input {
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.rsvp-form button {
+  margin-top: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 13px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}

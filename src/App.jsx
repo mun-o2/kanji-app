@@ -7,6 +7,7 @@ import { AppContext } from "./AppContext";
 import Top from "./pages/Top";
 import OrganizerLogin from "./pages/auth/OrganizerLogin";
 import OrganizerRegister from "./pages/auth/OrganizerRegister";
+import RSVP from "./pages/auth/RSVP";
 
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminHome from "./pages/admin/AdminHome";
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/" element={<Top />} />
             <Route path="/login" element={<OrganizerLogin />} />
             <Route path="/register" element={<OrganizerRegister />} />
+            <Route path="/rsvp" element={<RSVP />} />
 
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminHome />} />
