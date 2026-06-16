@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./styles/OrganizerLogin.css";
+import "./OrganizerLogin.css";
 
 function OrganizerLogin() {
     const navigate = useNavigate();

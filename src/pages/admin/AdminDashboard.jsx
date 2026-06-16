@@ -1,8 +1,10 @@
 import { useState } from "react";
-import "./styles/AdminDashboard.css";
+import { useNavigate } from "react-router-dom";
+import "./AdminDashboard.css";
 
 function AdminDashboard() {
     const [selectedUser, setSelectedUser] = useState(null);
+    const navigate = useNavigate();
 
     const participants = [
         { name: "山田 太郎", grade: "2年", drink: "飲む", allergy: "なし", status: "参加予定" },
@@ -14,12 +16,11 @@ function AdminDashboard() {
     return (
         <main className="admin-page">
             <aside className="admin-sidebar">
-                <h2>eventer</h2>
-                <p>ダッシュボード</p>
-                <p className="active">参加者</p>
-                <p>席割</p>
-                <p>当日受付</p>
-                <p>設定</p>
+                <h2>ダンスサークル</h2>
+                <p onClick={() => navigate("/group/home")}>ホーム</p>
+                <p onClick={() => navigate("/group/events")}>イベント</p>
+                <p onClick={() => navigate("/group/members")}>メンバー</p>
+                <p onClick={() => navigate("/group/settings")}>設定</p>
             </aside>
 
             <section className="admin-content">

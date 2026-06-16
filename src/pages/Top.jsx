@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./styles/Top.css";
+import "./Top.css";
 
 function Top() {
   const navigate = useNavigate();
