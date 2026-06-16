@@ -24,8 +24,8 @@ function AdminLayout() {
                         イベント
                     </p>
                     <p
-                        className={location.pathname === "/admin/participants" ? "active" : ""}
-                        onClick={() => navigate("/admin/participants")}
+                        className={location.pathname === "/admin/members" ? "active" : ""}
+                        onClick={() => navigate("/admin/members")}
                     >
                         メンバー
                     </p>
@@ -41,7 +41,7 @@ function AdminLayout() {
             <section className="admin-content">
                 <Outlet />
             </section>
-        </main>
+        </main >
     );
 }
 
