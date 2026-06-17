@@ -1,8 +1,24 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import "./RSVP.css";
 
 function RSVP() {
 	const { groupId } = useParams();
+	const [submitted, setSubmitted] = useState(false);
+
+	if (submitted) {
+		return (
+			<main className="rsvp-page">
+				<div className="rsvp-card complete-card">
+					<p className="rsvp-label">eventer</p>
+					<h1>登録が完了しました</h1>
+					<p className="rsvp-description">
+						「{groupId}」へのメンバー登録が完了しました。
+					</p>
+				</div>
+			</main>
+		);
+	}
 
 	return (
 		<main className="rsvp-page">
@@ -34,7 +50,9 @@ function RSVP() {
 						<input placeholder="例：なし" />
 					</label>
 
-					<button type="button">登録する</button>
+					<button type="button" onClick={() => setSubmitted(true)}>
+						登録する
+					</button>
 				</form>
 			</div>
 		</main>

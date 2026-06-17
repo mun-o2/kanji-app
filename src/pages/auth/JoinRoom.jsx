@@ -23,18 +23,21 @@ function JoinRoom() {
         <main className="join-page">
             <div className="join-card">
                 <p className="join-label">eventer</p>
-                <h1>ルームに参加</h1>
-                <p>
+                <h1 className="join-title">ルームに参加</h1>
+                <p className="join-description">
                     幹事から共有された招待URL、またはグループIDを入力してください。
                 </p>
 
                 <input
+                    className="join-input"
                     value={joinUrl}
                     onChange={(e) => setJoinUrl(e.target.value)}
-                    placeholder="例：/join/dance-circle"
+                    placeholder="例：http://localhost:5173/"
                 />
 
-                <button onClick={handleJoin}>次へ</button>
+                <button className="join-button" onClick={handleJoin}>
+                    次へ
+                </button>
             </div>
         </main>
     );

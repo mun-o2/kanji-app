@@ -10,45 +10,45 @@
 .join-card {
   width: 100%;
   max-width: 420px;
-  background-color: white;
+  background: white;
   border: 1px solid #e5e7eb;
   border-radius: 24px;
   padding: 32px;
+  text-align: center;
 }
 
 .join-label {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   color: #2563eb;
   font-weight: 700;
 }
 
-.join-card h1 {
+.join-title {
   margin: 0;
   font-size: 28px;
   color: #111827;
 }
 
-.join-card p {
-  margin-top: 10px;
+.join-description {
+  margin: 10px 0 24px;
   color: #6b7280;
   line-height: 1.6;
 }
 
-.join-card input {
+.join-input {
   width: 100%;
-  margin-top: 20px;
   padding: 13px 14px;
   border: 1px solid #e5e7eb;
   border-radius: 14px;
   font-size: 14px;
 }
 
-.join-card input:focus {
+.join-input:focus {
   outline: none;
   border-color: #2563eb;
 }
 
-.join-card button {
+.join-button {
   width: 100%;
   margin-top: 16px;
   border: none;
@@ -60,6 +60,6 @@
   cursor: pointer;
 }
 
-.join-card button:hover {
+.join-button:hover {
   background-color: #1d4ed8;
 }

@@ -63,3 +63,7 @@
   font-weight: 700;
   cursor: pointer;
 }
+
+.complete-card {
+  text-align: center;
+}
