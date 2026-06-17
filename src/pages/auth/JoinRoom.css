@@ -1,0 +1,65 @@
+.join-page {
+  min-height: 100vh;
+  background-color: #f4f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.join-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.join-label {
+  margin: 0 0 10px;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.join-card h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #111827;
+}
+
+.join-card p {
+  margin-top: 10px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.join-card input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+.join-card input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.join-card button {
+  width: 100%;
+  margin-top: 16px;
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  padding: 13px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.join-card button:hover {
+  background-color: #1d4ed8;
+}

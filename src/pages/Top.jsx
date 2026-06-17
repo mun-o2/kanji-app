@@ -19,7 +19,7 @@ function Top() {
 
         <div className="top-button">
           <button onClick={() => navigate("/login")}>ルームを作成する</button>
-          <button className="join-button" onClick={() => navigate("/rsvp")}>ルームに参加する</button>
+          <button className="join-button" onClick={() => navigate("/join")}>ルームに参加する</button>
         </div>
 
       </section>

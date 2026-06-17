@@ -1,13 +1,16 @@
+import { useParams } from "react-router-dom";
 import "./RSVP.css";
 
 function RSVP() {
+	const { groupId } = useParams();
+
 	return (
 		<main className="rsvp-page">
 			<div className="rsvp-card">
 				<p className="rsvp-label">eventer</p>
-				<h1>イベント参加登録</h1>
+				<h1>メンバー登録</h1>
 				<p className="rsvp-description">
-					ニックネームと暗証番号を登録して、イベントに参加できます。
+					「{groupId}」に参加するため、情報を登録してください。
 				</p>
 
 				<form className="rsvp-form">
@@ -28,7 +31,7 @@ function RSVP() {
 
 					<label>
 						アレルギー
-						<input placeholder="例：甲殻類、なし" />
+						<input placeholder="例：なし" />
 					</label>
 
 					<button type="button">登録する</button>

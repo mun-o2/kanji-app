@@ -66,6 +66,94 @@
   cursor: pointer;
 }
 
+/* 招待ボタンを押したときのポップアップ*/
+.invite-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(17, 24, 39, 0.25);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 120px;
+  z-index: 50;
+}
+
+.invite-popover {
+  position: relative;
+  width: 420px;
+  max-width: calc(100% - 32px);
+
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 26px;
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+.invite-close-button {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.invite-label {
+  margin: 0 0 8px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.invite-popover h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #111827;
+}
+
+.invite-description {
+  margin: 10px 0 18px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.invite-url-box {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px;
+
+  color: #374151;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.invite-copy-button {
+  width: 100%;
+  margin-top: 16px;
+
+  border: none;
+  background: #2563eb;
+  color: white;
+
+  padding: 13px;
+  border-radius: 14px;
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.invite-copy-button:hover {
+  background: #1d4ed8;
+}
+
 .members-card {
   background: white;
   border: 1px solid #e5e7eb;

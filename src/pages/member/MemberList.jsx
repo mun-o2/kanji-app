@@ -3,6 +3,8 @@ import "./MemberList.css";
 
 function MemberList() {
     const [selectedMember, setSelectedMember] = useState(null);
+    const [showInvite, setShowInvite] = useState(false);
+    const inviteUrl = "http://localhost:5173/join/dance-circle";
 
     const members = [
         {
@@ -59,7 +61,12 @@ function MemberList() {
 
             <div className="memberList-nav">
                 <input className="member-search" placeholder="ニックネームで検索" />
-                <button className="member-add-button">＋</button>
+                <button
+                    className="member-add-button"
+                    onClick={() => setShowInvite(true)}
+                >
+                    ＋
+                </button>
             </div>
 
             <div className="members-card">
@@ -125,6 +132,37 @@ function MemberList() {
                     </tbody>
                 </table>
             </div>
+
+            {showInvite && (
+                <div className="invite-overlay" onClick={() => setShowInvite(false)}>
+                    <div className="invite-popover" onClick={(e) => e.stopPropagation()}>
+                        <button
+                            className="invite-close-button"
+                            onClick={() => setShowInvite(false)}
+                        >
+                            ×
+                        </button>
+
+                        <p className="invite-label">招待URL</p>
+                        <h2>メンバーを招待</h2>
+                        <p className="invite-description">
+                            このURLを共有すると、メンバーがグループに参加できます。
+                        </p>
+
+                        <div className="invite-url-box">
+                            <span>{inviteUrl}</span>
+                        </div>
+
+                        <button
+                            className="invite-copy-button"
+                            onClick={() => navigator.clipboard.writeText(inviteUrl)}
+                        >
+                            URLをコピー
+                        </button>
+                    </div>
+                </div>
+            )}
+
         </section>
     );
 }
