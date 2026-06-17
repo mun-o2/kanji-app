@@ -1,10 +1,45 @@
+import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { AppContext } from "../../AppContext";
+import { createMember } from "../../mockAPI";
 import "./RSVP.css";
 
 function RSVP() {
 	const { groupId } = useParams();
+	const { setMembers } = useContext(AppContext);
+
 	const [submitted, setSubmitted] = useState(false);
+
+	const [form, setForm] = useState({
+		nickname: "",
+		pin: "",
+		birthDate: "",
+		grade: "",
+		alcohol: "",
+		allergy: "",
+	});
+
+	const handleChange = (e) => {
+		setForm({
+			...form,
+			[e.target.name]: e.target.value,
+		});
+	};
+
+	const handleSubmit = async () => {
+		const newMember = await createMember({
+			groupId,
+			nickname: form.nickname,
+			pin: form.pin,
+			birthDate: form.birthDate,
+			grade: form.grade,
+			alcohol: form.alcohol,
+			allergy: form.allergy,
+		});
+
+		setMembers((prevMembers) => [...prevMembers, newMember]);
+		setSubmitted(true);
+	};
 
 	if (submitted) {
 		return (
@@ -32,25 +67,77 @@ function RSVP() {
 				<form className="rsvp-form">
 					<label>
 						ニックネーム
-						<input placeholder="例：みう" />
+						<input
+							name="nickname"
+							value={form.nickname}
+							onChange={handleChange}
+							placeholder="例：みう"
+						/>
 					</label>
 
 					<label>
 						暗証番号
-						<input type="password" placeholder="4桁の数字" />
+						<input
+							name="pin"
+							value={form.pin}
+							onChange={handleChange}
+							placeholder="例：0000"
+						/>
+					</label>
+
+					<label>
+						<label>
+							学年
+							<select
+								name="grade"
+								value={form.grade}
+								onChange={handleChange}
+							>
+								<option value="">選択してください</option>
+								<option value="B1">B1</option>
+								<option value="B2">B2</option>
+								<option value="B3">B3</option>
+								<option value="B4">B4</option>
+								<option value="M1">M1</option>
+								<option value="M2">M2</option>
+								<option value="その他">その他</option>
+							</select>
+						</label>
+					</label>
+
+					<label>
+						飲酒
+						<select
+							name="alcohol"
+							value={form.alcohol}
+							onChange={handleChange}
+						>
+							<option value="">選択してください</option>
+							<option value="可">する</option>
+							<option value="不可">しない</option>
+							<option value="未成年">未成年</option>
+						</select>
 					</label>
 
 					<label>
 						生年月日
-						<input type="date" />
+						<input
+							name="birthDate"
+							type="date"
+							value={form.birthDate}
+							onChange={handleChange}
+						/>
 					</label>
 
 					<label>
 						アレルギー
-						<input placeholder="例：なし" />
+						<input name="allergy"
+							value={form.allergy}
+							onChange={handleChange}
+							placeholder="例：卵" />
 					</label>
 
-					<button type="button" onClick={() => setSubmitted(true)}>
+					<button type="button" onClick={handleSubmit}>
 						登録する
 					</button>
 				</form>

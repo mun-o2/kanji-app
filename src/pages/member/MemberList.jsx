@@ -1,46 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AppContext } from "../../AppContext";
 import "./MemberList.css";
 
 function MemberList() {
+    const { members } = useContext(AppContext);
     const [selectedMember, setSelectedMember] = useState(null);
     const [showInvite, setShowInvite] = useState(false);
     const inviteUrl = "http://localhost:5173/join/dance-circle";
 
-    const members = [
-        {
-            id: 1,
-            role: "メンバー",
-            nickname: "みう",
-            pin: "1234",
-            birthDate: "2005/04/12",
-            grade: "3年",
-            alcohol: "可",
-            allergy: "なし",
-            status: "登録済み",
-        },
-        {
-            id: 2,
-            role: "メンバー",
-            nickname: "はる",
-            pin: "5678",
-            birthDate: "2004/09/03",
-            grade: "4年",
-            alcohol: "不可",
-            allergy: "甲殻類",
-            status: "登録済み",
-        },
-        {
-            id: 3,
-            role: "メンバー",
-            nickname: "そうた",
-            pin: "2468",
-            birthDate: "2006/01/20",
-            grade: "2年",
-            alcohol: "未成年",
-            allergy: "なし",
-            status: "未確認",
-        },
-    ];
 
     const handleSelectMember = (member) => {
         if (selectedMember?.id === member.id) {

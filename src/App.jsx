@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import mock from "./mockData";
@@ -25,9 +26,22 @@ import ReceptionPage from "./pages/event/ReceptionPage";
 
 export default function App() {
   const [events, setEvents] = useState(mock.events);
+  const [members, setMembers] = useState(() => {
+    const savedMembers = localStorage.getItem("eventer-members");
+
+    if (savedMembers) {
+      return JSON.parse(savedMembers);
+    }
+
+    return mock.members;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("eventer-members", JSON.stringify(members));
+  }, [members]);
 
   return (
-    <AppContext.Provider value={{ events, setEvents }}>
+    <AppContext.Provider value={{ events, setEvents, members, setMembers }}>
       <BrowserRouter>
         <div className="app-root">
           <Routes>
