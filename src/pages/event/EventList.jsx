@@ -1,8 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./EventList.css";
 
 function EventList() {
     const navigate = useNavigate();
+    const { groupId } = useParams();
 
     const events = [
         {
@@ -33,7 +34,7 @@ function EventList() {
                     <div
                         key={event.id}
                         className="event-card"
-                        onClick={() => navigate(`/admin/events/${event.id}`)}
+                        onClick={() => navigate(`/${groupId}/admin/events/${event.id}`)}
                     >
                         <div className="event-card-top">
                             <h2>{event.name}</h2>

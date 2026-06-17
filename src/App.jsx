@@ -51,7 +51,7 @@ export default function App() {
             <Route path="/join/:groupId" element={<RSVP />} />
             <Route path="/join" element={<JoinRoom />} />
 
-            <Route path="/admin" element={<AdminLayout />}>
+            <Route path="/:groupId/admin" element={<AdminLayout />}>
               <Route index element={<AdminHome />} />
               <Route path="events" element={<EventList />} />
               <Route path="events/create" element={<EventCreate />} />
