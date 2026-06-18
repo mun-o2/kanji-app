@@ -20,6 +20,7 @@ import AdminSettings from "./pages/admin/AdminSettings";
 import EventList from "./pages/event/EventList";
 import EventDetail from "./pages/event/EventDetail";
 import EventCreate from "./pages/event/EventCreate";
+import EventAnswer from "./pages/event/EventAnswer";
 
 import MemberList from "./pages/member/MemberList";
 import ParticipantList from "./pages/event/ParticipantList";
@@ -53,6 +54,7 @@ export default function App() {
             <Route path="/register" element={<OrganizerRegister />} />
             <Route path="/join/:groupId" element={<RSVP />} />
             <Route path="/join" element={<JoinRoom />} />
+            <Route path="/join/:groupId/events/:eventId" element={<EventAnswer />} />
 
             <Route path="/:groupId/admin" element={<AdminLayout />}>
               <Route index element={<AdminHome />} />

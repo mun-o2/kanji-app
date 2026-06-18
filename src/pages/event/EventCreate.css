@@ -1,0 +1,77 @@
+.event-create-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 24px;
+}
+
+.event-create-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 32px;
+  text-align: center;
+}
+
+.event-create-label {
+  color: #2563eb;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.event-create-card h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #111827;
+}
+
+.event-create-card p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.event-create-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.event-create-form label {
+  display: grid;
+  gap: 8px;
+  text-align: left;
+  color: #374151;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.event-create-form input,
+.event-create-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 14px;
+  background: white;
+}
+
+.event-create-form textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.event-create-form button {
+  width: 100%;
+  margin-top: 8px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}

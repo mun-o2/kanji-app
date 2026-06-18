@@ -1,0 +1,74 @@
+.event-answer-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.event-answer-card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 32px;
+  text-align: center;
+}
+
+.event-answer-label {
+  color: #2563eb;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.event-answer-card h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #111827;
+}
+
+.event-answer-description {
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 10px 0 24px;
+}
+
+.event-answer-form {
+  display: grid;
+  gap: 16px;
+}
+
+.event-answer-form label {
+  display: grid;
+  gap: 8px;
+  text-align: left;
+  color: #374151;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.event-answer-form input,
+.event-answer-form select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+.event-answer-form button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.event-answer-error {
+  color: #dc2626;
+  font-size: 14px;
+}

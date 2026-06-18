@@ -6,10 +6,15 @@ function AdminLayout() {
     const location = useLocation();
     const { groupId } = useParams();
 
+    const groups =
+        JSON.parse(localStorage.getItem("eventer-groups")) || {};
+
+    const group = groups[groupId];
+
     return (
         <main className="admin-page">
             <aside className="admin-sidebar">
-                <h2>eventer</h2>
+                <h2>{group?.name || "eventer"}</h2>
 
                 <nav className="admin-nav">
                     <p

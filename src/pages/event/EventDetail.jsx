@@ -1,68 +1,56 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./EventDetail.css";
 
 function EventDetail() {
-    const { eventId } = useParams();
+    const { groupId, eventId } = useParams();
+
+    const groups = JSON.parse(localStorage.getItem("eventer-groups")) || {};
+    const group = groups[groupId];
+    const event = group?.events?.find((event) => event.id === eventId);
     const navigate = useNavigate();
-
-    const events = [
-        {
-            id: "1",
-            name: "新歓飲み会",
-            date: "2026/6/20",
-            participantsCount: 18,
-            status: "受付中",
-        },
-        {
-            id: "2",
-            name: "夏打ち上げ",
-            date: "2026/8/10",
-            participantsCount: 25,
-            status: "準備中",
-        },
-    ];
-
-    const event = events.find((e) => e.id === eventId);
 
     if (!event) {
         return <p>イベントが見つかりません</p>;
     }
 
+    const inviteUrl = `http://localhost:5173/join/${groupId}/events/${eventId}`;
+
     return (
         <section className="event-detail-page">
-            <button className="back-link" onClick={() => navigate("/admin/events")}>
-                ← イベント一覧へ
-            </button>
+            <div className="event-detail-card">
+                <h1 className="event-title">{event.title}</h1>
 
-            <div className="event-detail-header">
-                <div>
-                    <h1>{event.name}</h1>
-                    <p>{event.date}</p>
-                </div>
-                <span>{event.status}</span>
-            </div>
+                <div className="event-info">
+                    <div
+                        className="event-info-item clickable-info"
+                        onClick={() => navigate(`/${groupId}/admin/events/${eventId}/participants`)}
+                    >
+                        <span className="event-info-label">参加者</span>
+                        <span className="event-info-value">
+                            {event.participants?.length || 0}人
+                        </span>
+                    </div>
 
-            <div className="event-summary-grid">
-                <div className="summary-card">
-                    <p>参加者</p>
-                    <strong>{event.participantsCount}人</strong>
-                </div>
-
-                <div className="summary-card">
-                    <p>席割</p>
-                    <strong>未作成</strong>
+                    <div className="event-info-item">
+                        <span className="event-info-label">場所</span>
+                        <span className="event-info-value">{event.place}</span>
+                    </div>
                 </div>
 
-                <div className="summary-card">
-                    <p>受付</p>
-                    <strong>準備中</strong>
-                </div>
-            </div>
+                <div className="invite-section">
+                    <h2>参加回答URL</h2>
 
-            <div className="event-action-list">
-                <button>参加者を管理</button>
-                <button>席割を作成</button>
-                <button>当日受付を開く</button>
+                    <div className="invite-url">
+                        {inviteUrl}
+                    </div>
+
+                    <button
+                        className="copy-button"
+                        onClick={() => navigator.clipboard.writeText(inviteUrl)}
+                    >
+                        URLをコピー
+                    </button>
+                </div>
             </div>
         </section>
     );

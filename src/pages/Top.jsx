@@ -18,7 +18,7 @@ function Top() {
         </p>
 
         <div className="top-button">
-          <button onClick={() => navigate("/login")}>ルームを作成する</button>
+          <button onClick={() => navigate("/login")}>幹事ログイン</button>
           <button className="join-button" onClick={() => navigate("/join")}>ルームに参加する</button>
         </div>
 
