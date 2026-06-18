@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { createMember } from "../../mockAPI";
+import { createMember } from "../../../mockAPI";
 import "./RSVP.css";
 
 function RSVP() {

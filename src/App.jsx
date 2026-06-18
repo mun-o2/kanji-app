@@ -5,27 +5,24 @@ import "./App.css";
 import mock from "./mockData";
 import { AppContext } from "./AppContext";
 
-import Top from "./pages/Top";
-import OrganizerLogin from "./pages/auth/OrganizerLogin";
-import OrganizerRegister from "./pages/auth/OrganizerRegister";
-import RSVP from "./pages/auth/RSVP";
-import JoinRoom from "./pages/auth/JoinRoom";
+import Top from "./pages/top/Top";
+import OrganizerLogin from "./pages/top/auth/OrganizerLogin";
+import OrganizerRegister from "./pages/top/auth/OrganizerRegister";
+import RSVP from "./pages/top/auth/RSVP";
+import JoinRoom from "./pages/top/auth/JoinRoom";
 
-import GroupCreate from "./pages/group/GroupCreate"
+import GroupCreate from "./pages/admin/group/GroupCreate"
 
 import AdminLayout from "./pages/admin/AdminLayout";
-import AdminHome from "./pages/admin/AdminHome";
 import AdminSettings from "./pages/admin/AdminSettings";
 
-import EventList from "./pages/event/EventList";
-import EventDetail from "./pages/event/EventDetail";
-import EventCreate from "./pages/event/EventCreate";
+import EventList from "./pages/admin/event/EventList";
+import EventDetail from "./pages/admin/event/EventDetail";
+import EventCreate from "./pages/admin/event/EventCreate";
 import EventAnswer from "./pages/event/EventAnswer";
 
-import MemberList from "./pages/member/MemberList";
-import ParticipantList from "./pages/event/ParticipantList";
-import SeatPage from "./pages/event/SeatPage";
-import ReceptionPage from "./pages/event/ReceptionPage";
+import MemberList from "./pages/admin/member/MemberList";
+import ParticipantList from "./pages/admin/event/ParticipantList";
 
 export default function App() {
   const [events, setEvents] = useState(mock.events);
@@ -57,13 +54,10 @@ export default function App() {
             <Route path="/join/:groupId/events/:eventId" element={<EventAnswer />} />
 
             <Route path="/:groupId/admin" element={<AdminLayout />}>
-              <Route index element={<AdminHome />} />
               <Route path="events" element={<EventList />} />
               <Route path="events/create" element={<EventCreate />} />
               <Route path="events/:eventId" element={<EventDetail />} />
               <Route path="events/:eventId/participants" element={<ParticipantList />} />
-              <Route path="events/:eventId/seats" element={<SeatPage />} />
-              <Route path="events/:eventId/reception" element={<ReceptionPage />} />
               <Route path="members" element={<MemberList />} />
               <Route path="settings" element={<AdminSettings />} />
             </Route>

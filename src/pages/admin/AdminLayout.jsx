@@ -1,5 +1,5 @@
 import { Outlet, useNavigate, useLocation, useParams } from "react-router-dom";
-import "./AdminDashboard.css";
+import "./AdminLayout.css";
 
 function AdminLayout() {
     const navigate = useNavigate();
