@@ -4,23 +4,10 @@ import "./EventList.css";
 function EventList() {
     const navigate = useNavigate();
     const { groupId } = useParams();
+    const groups = JSON.parse(localStorage.getItem("eventer-groups")) || {};
+    const group = groups[groupId];
 
-    const events = [
-        {
-            id: 1,
-            name: "新歓飲み会",
-            date: "2026/6/20",
-            participantsCount: 18,
-            status: "開催済み",
-        },
-        {
-            id: 2,
-            name: "夏打ち上げ",
-            date: "2026/8/10",
-            participantsCount: 25,
-            status: "準備中",
-        },
-    ];
+    const events = group?.events || [];
 
     return (
         <section className="event-list-page">

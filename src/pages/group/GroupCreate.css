@@ -1,13 +1,13 @@
-.rsvp-page {
+.group-create-page {
   min-height: 100vh;
   background: #f4f7fb;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding: 40px 24px;
+  align-items: center;
+  padding: 24px;
 }
 
-.rsvp-card {
+.group-create-card {
   width: 100%;
   max-width: 420px;
   background: white;
@@ -17,59 +17,52 @@
   text-align: center;
 }
 
-.rsvp-label {
+.group-create-label {
+  margin: 0 0 10px;
   color: #2563eb;
   font-weight: 700;
-  margin-bottom: 15px;
 }
 
-.rsvp-title {
+.group-create-card h1 {
   margin: 0;
   font-size: 28px;
   color: #111827;
-  margin-bottom: 10px;
 }
 
-.rsvp-description {
-  font-size: medium;
+.group-create-description {
   margin: 10px 0 24px;
   color: #6b7280;
   line-height: 1.6;
 }
 
-.rsvp-form {
+.group-create-form {
   display: grid;
   gap: 16px;
-  margin-top: 24px;
 }
 
-.rsvp-form label {
+.group-create-form label {
   display: grid;
   gap: 8px;
   text-align: left;
   color: #374151;
   font-weight: 600;
   font-size: 14px;
-  margin-bottom: 10px;
 }
 
-.rsvp-form input,
-.rsvp-form select {
+.group-create-form input {
   width: 100%;
   padding: 13px 14px;
   border: 1px solid #e5e7eb;
   border-radius: 14px;
   font-size: 14px;
-  background-color: white;
 }
 
-.rsvp-form input:focus,
-.rsvp-form select:focus {
+.group-create-form input:focus {
   outline: none;
   border-color: #2563eb;
 }
 
-.rsvp-form button {
+.group-create-form button {
   width: 100%;
   margin-top: 8px;
   border: none;
@@ -81,15 +74,6 @@
   cursor: pointer;
 }
 
-.complete-page {
-  align-items: center;
-  padding: 24px;
-}
-
-.complete-card {
-  width: 100%;
-  max-width: 420px;
-  background: white;
-  border: 1px solid #e5e7eb;
-  justify-content: center;
+.group-create-form button:hover {
+  background: #1d4ed8;
 }

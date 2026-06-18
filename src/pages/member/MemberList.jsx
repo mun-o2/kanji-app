@@ -1,12 +1,19 @@
-import { useState, useContext } from "react";
-import { AppContext } from "../../AppContext";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 import "./MemberList.css";
 
 function MemberList() {
-    const { members } = useContext(AppContext);
+    const { groupId } = useParams();
+
+    const groups = JSON.parse(localStorage.getItem("eventer-groups")) || {};
+    const group = groups[groupId];
+
+    const members = group?.members || [];
+
     const [selectedMember, setSelectedMember] = useState(null);
     const [showInvite, setShowInvite] = useState(false);
-    const inviteUrl = "http://localhost:5173/join/dance-circle";
+
+    const inviteUrl = `http://localhost:5173/join/${groupId}`;
 
 
     const handleSelectMember = (member) => {

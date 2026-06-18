@@ -1,12 +1,10 @@
 import { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { AppContext } from "../../AppContext";
 import { createMember } from "../../mockAPI";
 import "./RSVP.css";
 
 function RSVP() {
 	const { groupId } = useParams();
-	const { setMembers } = useContext(AppContext);
 
 	const [submitted, setSubmitted] = useState(false);
 
@@ -37,16 +35,27 @@ function RSVP() {
 			allergy: form.allergy,
 		});
 
-		setMembers((prevMembers) => [...prevMembers, newMember]);
+		const savedGroups =
+			JSON.parse(localStorage.getItem("eventer-groups")) || {};
+
+		const targetGroup = savedGroups[groupId];
+
+		if (targetGroup) {
+			targetGroup.members = [...targetGroup.members, newMember];
+			savedGroups[groupId] = targetGroup;
+
+			localStorage.setItem("eventer-groups", JSON.stringify(savedGroups));
+		}
+
 		setSubmitted(true);
 	};
 
 	if (submitted) {
 		return (
-			<main className="rsvp-page">
+			<main className="rsvp-page complete-page">
 				<div className="rsvp-card complete-card">
 					<p className="rsvp-label">eventer</p>
-					<h1>登録が完了しました</h1>
+					<h1 className="rsvp-title">登録が完了しました</h1>
 					<p className="rsvp-description">
 						「{groupId}」へのメンバー登録が完了しました。
 					</p>
@@ -59,7 +68,7 @@ function RSVP() {
 		<main className="rsvp-page">
 			<div className="rsvp-card">
 				<p className="rsvp-label">eventer</p>
-				<h1>メンバー登録</h1>
+				<h1 className="rsvp-title">メンバー登録</h1>
 				<p className="rsvp-description">
 					「{groupId}」に参加するため、情報を登録してください。
 				</p>
@@ -71,7 +80,7 @@ function RSVP() {
 							name="nickname"
 							value={form.nickname}
 							onChange={handleChange}
-							placeholder="例：みう"
+							placeholder="例：ねこ"
 						/>
 					</label>
 
@@ -86,24 +95,24 @@ function RSVP() {
 					</label>
 
 					<label>
-						<label>
-							学年
-							<select
-								name="grade"
-								value={form.grade}
-								onChange={handleChange}
-							>
-								<option value="">選択してください</option>
-								<option value="B1">B1</option>
-								<option value="B2">B2</option>
-								<option value="B3">B3</option>
-								<option value="B4">B4</option>
-								<option value="M1">M1</option>
-								<option value="M2">M2</option>
-								<option value="その他">その他</option>
-							</select>
-						</label>
+
+						学年
+						<select
+							name="grade"
+							value={form.grade}
+							onChange={handleChange}
+						>
+							<option value="">選択してください</option>
+							<option value="B1">B1</option>
+							<option value="B2">B2</option>
+							<option value="B3">B3</option>
+							<option value="B4">B4</option>
+							<option value="M1">M1</option>
+							<option value="M2">M2</option>
+							<option value="その他">その他</option>
+						</select>
 					</label>
+
 
 					<label>
 						飲酒

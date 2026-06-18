@@ -11,6 +11,8 @@ import OrganizerRegister from "./pages/auth/OrganizerRegister";
 import RSVP from "./pages/auth/RSVP";
 import JoinRoom from "./pages/auth/JoinRoom";
 
+import GroupCreate from "./pages/group/GroupCreate"
+
 import AdminLayout from "./pages/admin/AdminLayout";
 import AdminHome from "./pages/admin/AdminHome";
 import AdminSettings from "./pages/admin/AdminSettings";
@@ -47,6 +49,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Top />} />
             <Route path="/login" element={<OrganizerLogin />} />
+            <Route path="/group/create" element={<GroupCreate />} />
             <Route path="/register" element={<OrganizerRegister />} />
             <Route path="/join/:groupId" element={<RSVP />} />
             <Route path="/join" element={<JoinRoom />} />

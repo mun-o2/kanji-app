@@ -2,10 +2,15 @@
   padding: 32px;
 }
 
+.settings-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
 .settings-header h1 {
   margin: 0;
   font-size: 28px;
-  color: #111827;
+  color: #1f2937;
 }
 
 .settings-header p {
@@ -14,41 +19,44 @@
 }
 
 .settings-card {
-  margin-top: 20px;
   background: white;
   border: 1px solid #e5e7eb;
   border-radius: 18px;
-  padding: 22px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
-.settings-card h2 {
-  margin: 0 0 14px;
-  font-size: 18px;
+.settings-card-title {
+  text-align: center;
+  padding: 16px 18px;
+  border-bottom: 1px solid #e5e7eb;
+
   color: #111827;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-.setting-row {
+.settings-row {
   display: flex;
   justify-content: space-between;
-  padding: 14px 0;
-  border-top: 1px solid #e5e7eb;
+  align-items: center;
+
+  padding: 16px 18px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.setting-row span {
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+.settings-label {
   color: #6b7280;
+  font-size: 14px;
 }
 
-.setting-row strong {
+.settings-value {
   color: #111827;
-}
-
-@media (max-width: 600px) {
-  .settings-page {
-    padding: 20px;
-  }
-
-  .setting-row {
-    flex-direction: column;
-    gap: 6px;
-  }
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
 }

@@ -13,12 +13,6 @@ function AdminLayout() {
 
                 <nav className="admin-nav">
                     <p
-                        className={location.pathname === "/admin" ? "active" : ""}
-                        onClick={() => navigate(`/${groupId}/admin`)}
-                    >
-                        ホーム
-                    </p>
-                    <p
                         className={location.pathname === `/${groupId}/admin/events` ? "active" : ""}
                         onClick={() => navigate(`/${groupId}/admin/events`)}
                     >
