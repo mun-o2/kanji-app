@@ -15,6 +15,8 @@ function MemberList() {
 
     const inviteUrl = `http://localhost:5173/join/${groupId}`;
 
+    const [searchText, setSearchText] = useState(""); //検索
+
 
     const handleSelectMember = (member) => {
         if (selectedMember?.id === member.id) {
@@ -23,6 +25,10 @@ function MemberList() {
             setSelectedMember(member);
         }
     };
+
+    const filteredMembers = members.filter((member) =>
+        member.nickname.toLowerCase().includes(searchText.toLowerCase())
+    );
 
     return (
         <section className="memberList-page">
@@ -34,7 +40,12 @@ function MemberList() {
             </div>
 
             <div className="memberList-nav">
-                <input className="member-search" placeholder="ニックネームで検索" />
+                <input
+                    className="member-search"
+                    placeholder="ニックネームで検索"
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                />
                 <button
                     className="member-add-button"
                     onClick={() => setShowInvite(true)}
@@ -54,7 +65,7 @@ function MemberList() {
                     </thead>
 
                     <tbody>
-                        {members.map((member) => (
+                        {filteredMembers.map((member) => (
                             <>
                                 <tr
                                     key={member.id}
