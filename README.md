@@ -1,18 +1,38 @@
-# React + Vite
+# eventer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+eventer は、サークルや学生団体のイベント幹事を支援するWebアプリです。  
+グループごとにメンバー管理・イベント作成・出欠回答を行うことができます。
 
-Currently, two official plugins are available:
+## 背景
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+サークルのイベント運営では、出欠確認・メンバー管理・連絡をLINEやスプレッドシートなど複数のツールで行う必要があり、幹事の負担が大きくなりがちです。
 
-## React Compiler
+eventer は、幹事業務を一元管理することを目的に開発しました。
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 主な機能
 
-Note: This will impact Vite dev & build performances.
+- 幹事登録・ログイン
+- グループ作成
+- メンバー招待URLの発行
+- メンバー登録
+- イベント作成
+- イベント一覧表示
+- イベント詳細表示
+- イベントごとの出欠回答URL発行
+- ニックネーム・PINによる出欠回答
+- 参加者一覧表示
 
-## Expanding the ESLint configuration
+## 使用技術
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- React Router
+- JavaScript
+- CSS
+- Vite
+- LocalStorage（仮データ管理）
+
+## セットアップ
+
+```bash
+npm install
+npm run dev
